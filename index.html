@@ -32,14 +32,22 @@
           </div>
           
           <div class="navbar-end space-x-4">
-            <a class="btn rounded-full hover: "><i class="fa-solid fa-house"></i></a>
-            <a class="btn rounded-full "><i class="fa-solid fa-pencil"></i></a>
-            <a class="btn rounded-full "
+            <div class="tooltip" data-tip="Home">
+              <a class="btn rounded-full hover: "><i class="fa-solid fa-house"></i></a>
+            </div>
+            <div class="tooltip" data-tip="Home">
+              <a class="btn rounded-full "><i class="fa-solid fa-pencil"></i></a>
+            </div>
+            <div class="tooltip" data-tip="Home">
+              <a class="btn rounded-full "
               ><i class="fa-solid fa-user-plus "></i
             ></a>
-            <a class="btn rounded-full "
+            </div>
+            <div class="tooltip" data-tip="Home">
+              <a class="btn rounded-full "
               ><i class="fa-brands fa-font-awesome"></i
             ></a>
+            </div>
             <a class="btn rounded-2xl px-7 text-white bg-[#797DFC]">Sign In</a>
           </div>
         </div>
@@ -124,61 +132,19 @@
         </div>
       </section>
       <!-- latest post section  -->
-      <section class="mt-24">
+      <section class="mt-16">
         <div class=" flex flex-col justify-center space-y-3 ">
             <h1 class="text-4xl font-bold text-center">Latest Posts</h1>
             <h1 class="text-center w-2/3 lg:w-2/4 mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</h1>
         </div>
         <!-- card -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-            <div>
-                <div class="card  bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
+            <div id="letest-post" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+               
             </div>
-            <div>
-                <div class="card  bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <div>
-                <div class="card  bg-base-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-                    </figure>
-                    <div class="card-body items-center text-center">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-        </div>
-
       </section>
     </main>
     <!-- Footer content -->
-    <footer class="mt-24  ">
+    <footer class="mt-16  ">
         <footer class="footer footer-center p-10 bg-gradient-to-t from-[#12132D00]   to-[#12132D0D] text-primary-content">
             <aside class="text-black space-y-3">
              <h1 class="text-4xl lg:text-5xl font-bold mt-4">ReTro</h1>
