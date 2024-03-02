@@ -1,26 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roton-A6</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="container mx-auto">
-    <header>
-        <h1 class="text-center text-gray-800 text-6xl ">Assalamu alaikum vaira </h1>
+    <!-- fav Icon -->
+    <script
+      src="https://kit.fontawesome.com/2596ecf14d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body >
+    <header  class="container mx-auto mt-10">
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost lg:hidden"
+              ></div>
+            </div>
+            <img src="./images/logo.png" alt="" />
+          </div>
+
+          <div class="navbar-end space-x-4">
+            <a class="btn rounded-full"><i class="fa-solid fa-house"></i></a>
+            <a class="btn rounded-full"><i class="fa-solid fa-pencil"></i></a>
+            <a class="btn rounded-full"
+              ><i class="fa-solid fa-user-plus"></i
+            ></a>
+            <a class="btn rounded-full"
+              ><i class="fa-brands fa-font-awesome"></i
+            ></a>
+            <a class="btn rounded-2xl px-7 text-white bg-[#797DFC]">Sign In</a>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- main content container -->
-    <main>
+    <main class="container mx-auto">
+      <!-- banner-section -->
+      <section class="mt-8">
+        <div
+          class="bg-cover bg-[#12132D] rounded-xl h-[550px]"
+          style="background-image: url('./images/bgbanner.png'); " >
+              <div class=" flex justify-around gap-10 p-24">
+                <div class="space-y-7 mt-10">
+                    <h1 class="text-6xl text-white font-bold">Welcome to the <br>
+                         <span class="bg-gradient-to-r from-[#797DFC] to-[#797DFC] bg-clip-text text-transparent">ReTro</span> Forum</h1>
+                    <p class="text-white text-2xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                    <div class="relative">
+                        <input type="text" placeholder="Search here anything" class="input rounded-3xl input-bordered input-md w-full max-w-xs" /> 
+                    <a class="btn text-xl absolute rounded-3xl left-64  px-5 text-white bg-[#797DFC]">Search</a>
+                    </div>
+                </div>
+                <div class=" text-xl space-y-6 bg-white rounded-3xl p-12">
+                    <div class="flex justify-between gap-5"> <h1>Registered Users</h1> <h1>01</h1></div>
+                    <div class="flex justify-between gap-5"> <h1>Forum</h1> <h1>05</h1></div>
+                    <div class="flex justify-between gap-5"> <h1>Topics</h1> <h1>01</h1></div>
+                    <div class="flex justify-between gap-5"> <h1>Replies</h1> <h1>01</h1></div>
 
+                </div>
+              </div>
+      </div>
+      </section>
+      <!-- lets discuse section -->
+      <section class="mt-24">
+        <div class=" flex flex-col justify-center space-y-3 ">
+            <h1 class="text-4xl font-bold text-center">Let’s Discuss</h1>
+            <h1 class="text-center w-2/4 mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</h1>
+        </div>
+        <div class="flex  gap-10">
+            <div id="show card" class="flex-1">
+                <div class="card card-side bg-base-100 shadow-xl">
+                    <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">New movie is released!</h2>
+                      <p>Click the button to watch on Jetflix app.</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Watch</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div id="show-mark-news">
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </section>
+      <!-- Forum -section  -->
+      <section class="bg-[#12132D] rounded-2xl mt-16">
+        <div class="flex gap-20 p-10 justify-around items-center">
+            <div class="pl-10 pt-10 w-2/4 text-white space-y-6">
+                <h1 class="text-4xl text-white font-bold ">Join Our Forum</h1>
+                <p >Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                <a class="btn text-xl  rounded-3xl px-5 text-white bg-[#797DFC]">Registered Now</a>
+            </div>
+            <div>
+                <img src="./images/joinforum.png" alt="">
+            </div>
+        </div>
+      </section>
+      <!-- latest post section  -->
+      <section class="mt-24">
+        <div class=" flex flex-col justify-center space-y-3 ">
+            <h1 class="text-4xl font-bold text-center">Latest Posts</h1>
+            <h1 class="text-center w-2/4 mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</h1>
+        </div>
+        <!-- card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+      </section>
     </main>
     <!-- Footer content -->
-    <footer>
+    <footer class="mt-24  ">
+        <footer class="footer footer-center p-10 bg-gradient-to-t from-[#12132D00]   to-[#12132D0D] text-primary-content">
+            <aside class="text-black">
+             <h1 class=" text-5xl font-bold mt-4">ReTro</h1>
+              <p class="font-bold w-2/3">
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+              </p> 
+              
+            </aside> 
+            <nav>
+              <div class="grid grid-flow-col gap-4 text-black">
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a><i class="fa-brands fa-facebook-f"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-github"></i></i></a>
+                <hr>
+              </div>
+              <p class="text-black mt-24">Copyright © 2024 - All right reserved</p>
+            </nav>
+          </footer>
 
     </footer>
 
-
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
