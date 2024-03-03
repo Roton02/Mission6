@@ -32,6 +32,7 @@
           </div>
           
           <div class="navbar-end space-x-4">
+           <div class="space-x-4 hidden lg:block">
             <div class="tooltip" data-tip="Home">
               <a class="btn rounded-full hover: "><i class="fa-solid fa-house"></i></a>
             </div>
@@ -47,7 +48,8 @@
               <a class="btn rounded-full "
               ><i class="fa-brands fa-font-awesome"></i
             ></a>
-            </div>
+            </div> 
+           </div>
             <a class="btn rounded-2xl px-7 text-white bg-[#797DFC]">Sign In</a>
           </div>
         </div>
@@ -56,29 +58,30 @@
     <!-- main content container -->
     <main class="container mx-auto">
       <!-- banner-section -->
-      <section class="mt-8">
+      <section class="mt-8 relative">
         <div
           class="bg-cover bg-[#12132D] rounded-3xl h-[550px]"
           style="background-image: url('./images/bgbanner.png'); " >
-              <div class=" flex flex-col lg:flex-row justify-around gap-10 p-24">
+              <div class="p-8 lg:p-24">
                 <div class="space-y-7 mt-10">
-                    <h1 class=" text-3xl lg:text-6xl text-white font-bold">Welcome to the <br>
+                    <h1 class=" text-4xl lg:text-6xl text-white font-bold">Welcome to the <br>
                          <span class="bg-gradient-to-r from-[#797DFC] to-[#797DFC] bg-clip-text text-transparent">ReTro</span> Forum</h1>
                     <p class="text-white text-2xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
                     <div class="relative">
-                        <input type="text" placeholder="Search here anything" class="input rounded-3xl input-bordered input-md w-full lg:max-w-xs" /> 
-                    <a class="btn text-xl absolute rounded-3xl lg:left-64  px-5 text-white bg-[#797DFC]">Search</a>
+                        <input type="text" placeholder="Search here anything" class="input rounded-3xl input-bordered input-md lg:w-60 lg:w-full lg:max-w-xs" /> 
+                    <a class="btn lg:text-xl absolute rounded-3xl   lg:left-64  lg:px-5 text-white bg-[#797DFC]">Search</a>
                     </div>
                 </div>
-                <div class=" text-xl space-y-6 bg-white rounded-3xl p-12">
-                    <div class="flex justify-between gap-5"> <h1>Registered Users</h1> <h1>01</h1></div>
-                    <div class="flex justify-between gap-5"> <h1>Forum</h1> <h1>05</h1></div>
-                    <div class="flex justify-between gap-5"> <h1>Topics</h1> <h1>01</h1></div>
-                    <div class="flex justify-between gap-5"> <h1>Replies</h1> <h1>01</h1></div>
-
-                </div>
+                
               </div>
       </div>
+      <div class=" text-xl space-y-6 mt-5 lg:absolute top-32 right-28 bg-gray-100 rounded-3xl p-12">
+        <div class="flex justify-between gap-5"> <h1>Registered Users</h1> <h1>01</h1></div>
+        <div class="flex justify-between gap-5"> <h1>Forum</h1> <h1>05</h1></div>
+        <div class="flex justify-between gap-5"> <h1>Topics</h1> <h1>01</h1></div>
+        <div class="flex justify-between gap-5"> <h1>Replies</h1> <h1>01</h1></div>
+
+    </div>
       </section>
       <!-- lets discuse section -->
       <section class="mt-24">
@@ -120,7 +123,7 @@
       </section>
       <!-- Forum -section  -->
       <section class="bg-[#12132D] rounded-2xl mt-16">
-        <div class="flex flex-col-reverse lg:flex-row gap-20 p-10 justify-around items-center">
+        <div class="flex flex-col-reverse lg:flex-row lg:gap-20 p-10 justify-around items-center">
             <div class="pl-10 pt-10 lg:w-2/4 text-white space-y-6">
                 <h1 class="text-4xl text-white font-bold ">Join Our Forum</h1>
                 <p >Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
