@@ -52,7 +52,7 @@ const dataLoad = (post) => {
             <h2> <i class="fa-solid fa-eye"></i> ${post.view_count}</h2>
             <h2> <i class="fa-solid fa-clock"></i> ${post.posted_time}</h2>
           </div>
-          <div>  <button onclick="markAsRead('${post.title}', ${post.view_count})" class="bg-green-400 px-2 py-1 rounded-full"><i class="fa-solid fa-envelope-open"></i></button></div>
+          <div>  <button onclick="markAsRead('${post.title.slice(0,32)}', ${post.view_count})" class="bg-green-400 px-2 py-1 rounded-full"><i class="fa-solid fa-envelope-open"></i></button></div>
         </div>
         
     </div>
