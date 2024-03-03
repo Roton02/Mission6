@@ -7,7 +7,7 @@ const getPosts = async (catId) => {
   data.posts.forEach((post) => {
     
     setTimeout(() => {
-      dataLoad(post),showCard2Data()
+      dataLoad(post)
     }, 2000);
   });
 };
@@ -29,13 +29,13 @@ const dataLoad = (post) => {
 
   const showCardData = document.getElementById("show card");
   const div = document.createElement("div");
-  div.classList = "card card-side bg-[#797DFC1A]  shadow-xl";
+  div.classList = "card card-side bg-[#797DFC1A]  ";
   div.innerHTML = `
     <div class="flex">
     <div>  
         <div class="relative"> 
-        <figure><img class="p-2 lg:p-6 w-32 lg:w-48 rounded-2xl  " src="${post.image}" alt=""></figure>
-        <div id="isActive" class="w-4 h-4 bg-red-700    rounded-full absolute 
+        <figure><img class="  p-2 lg:p-6 w-32 lg:w-48 rounded-2xl  " src="${post.image}" alt=""></figure>
+        <div id="isActive${post.id}" class="w-4 h-4     rounded-full absolute 
         top-0 right-0 lg:top-4 lg:right-4 ">  </div>
         </div>
     </div>
@@ -47,47 +47,63 @@ const dataLoad = (post) => {
       <div class="space-y-2"><h1 class="text-xl font-semibold">${post.title}</h1>
         <h1>${post.description}</h1></div> <hr class="my-4">
         <div class="flex justify-between ">
-          <div class="flex gap-2 lg:gap-4">
+          <div class="flex  gap-2 lg:gap-4">
             <h2> <i class="fa-regular fa-comment-dots"></i> ${post.comment_count}</h2>
             <h2> <i class="fa-solid fa-eye"></i> ${post.view_count}</h2>
             <h2> <i class="fa-solid fa-clock"></i> ${post.posted_time}</h2>
           </div>
-          <div>  <button onclick="showCard2Data()" class="bg-green-400 px-2 py-1 rounded-full"><i class="fa-solid fa-envelope-open"></i></button></div>
+          <div>  <button onclick="markAsRead('${post.title}', ${post.view_count})" class="bg-green-400 px-2 py-1 rounded-full"><i class="fa-solid fa-envelope-open"></i></button></div>
         </div>
+        
     </div>
  </div>
     `;
+    const showMoreData = document.getElementById('show-mark-news')
+    document.getElementById('show-mark-news').classList.add('bg-[#12132D0D]')
+    // showCardData.classList.add('')
+    showMoreData.innerHTML =`
+    <div class="">
+    <div class="flex justify-between mb-5 ">
+    <h1 class="text-xl font-semibold">Title</h1>
+    <h1><i class="fa-solid fa-check-double mr-1 text-green-500"></i> Mark as read 
+    ( <span id="count">0</span> )</h1>
+   </div>
+    </div>
+    `
+    // console.log(post.title);
+    // console.log(post.view_count);
   showCardData.appendChild(div);
   document.getElementById('spinner').classList.add('hidden');
-
-  const cheekActive = document.getElementById("isActive");
+  cheekActiveId(post)
+};
+const cheekActiveId = (post) =>{
+  // console.log(post);
+  // console.log(post.isActive);
+  const cheekActive = document.getElementById("isActive"+post.id);
   // console.log(cheekActive);
-  if (`${post.isActive}`) {
+  if (post.isActive) {
     cheekActive.style.backgroundColor = "green";
   } else {
     cheekActive.style.backgroundColor = "red";
   }
-};
+}
 
-const showCard2Data = async () => {
+const markAsRead = async (first,second) => {
+  // console.log(first);
+  // console.log(second);
+   document.getElementById('count').innerText++;
+
   const showMarkNews = document.getElementById("show-mark-news");
   const div = document.createElement("div");
-  div.classList = "card lg:w-96 bg-[#12132D0D] p-6";
   div.innerHTML = `
-  <div>
-  <div class="flex justify-between mb-5 ">
-    <h1 class="text-xl font-semibold">Title</h1>
-    <h1><i class="fa-solid fa-check-double mr-1 text-green-500"></i> Mark as read ( <span>0</span> )</h1>
-   </div>
-   <div class="flex justify-between rounded-xl p-2 bg-white space-y-5 ">
-    <h1>10 Kids Unaware of Their <br> Halloween Costume</h1>
-    <h1>51010</h1>
-   </div>
-</div>
-    `;
+   <div class="flex  justify-between rounded-xl p-2 bg-white  ">
+    <h1>${first}</h1>
+    <h1> <i class="fa-solid fa-eye"></i> ${second}</h1>
+   </div>`;
   showMarkNews.appendChild(div);
-  document.getElementById("count").innerText++;
 };
+
+
 const latestPost = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
@@ -130,4 +146,3 @@ const latestPost = async () => {
 
 getPosts();
 latestPost();
-// showCard2Data()
