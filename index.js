@@ -1,11 +1,26 @@
-const getPosts = async () => {
+const getPosts = async (catId) => {
+  document.getElementById('spinner').classList.remove('hidden');
   const response = await fetch(
     `https://openapi.programming-hero.com/api/retro-forum/posts`
   );
   const data = await response.json();
   data.posts.forEach((post) => {
-    dataLoad(post);
+    
+    setTimeout(() => {
+      dataLoad(post),showCard2Data()
+    }, 2000);
   });
+};
+// search sectiom
+const inputArea = document.getElementById("input-area").value;
+const handleSearch = () => {
+  console.log(inputArea);
+  if (inputArea) {
+    getPosts(inputArea);
+  } else {
+    alert("Please enter a valid category name");
+  }
+  getElementById("input-area").value = "";
 };
 
 const dataLoad = (post) => {
@@ -37,12 +52,13 @@ const dataLoad = (post) => {
             <h2> <i class="fa-solid fa-eye"></i> ${post.view_count}</h2>
             <h2> <i class="fa-solid fa-clock"></i> ${post.posted_time}</h2>
           </div>
-          <div>  <button onclick="showCard2Data('${post.title, post.view_count}')" class="bg-green-400 px-2 py-1 rounded-full"><i class="fa-solid fa-envelope-open"></i></button></div>
+          <div>  <button onclick="showCard2Data()" class="bg-green-400 px-2 py-1 rounded-full"><i class="fa-solid fa-envelope-open"></i></button></div>
         </div>
     </div>
  </div>
     `;
   showCardData.appendChild(div);
+  document.getElementById('spinner').classList.add('hidden');
 
   const cheekActive = document.getElementById("isActive");
   // console.log(cheekActive);
@@ -53,30 +69,25 @@ const dataLoad = (post) => {
   }
 };
 
-const showCard2Data = async (data1, data2) => {
-  console.log(data1 , data2);
-  const respone = await fetch(
-    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${data1, data2}`
-  );
-  const postData = await respone.json();
-  console.log(postData);
-
+const showCard2Data = async () => {
   const showMarkNews = document.getElementById("show-mark-news");
   const div = document.createElement("div");
   div.classList = "card lg:w-96 bg-[#12132D0D] p-6";
   div.innerHTML = `
-        <div class="flex justify-between mb-5 ">
-        <h1 class="text-xl font-semibold">Title</h1>
-        <h1><i class="fa-solid fa-check-double mr-1 text-green-500"></i> Mark as read ( <span>0</span> )</h1>
-       </div>
-       <div class="flex justify-between rounded-xl p-2 bg-white space-y-5 ">
-        <h1>10 Kids Unaware of Their <br> Halloween Costume</h1>
-        <h1>51010</h1>
-       </div>
-      </div>
+  <div>
+  <div class="flex justify-between mb-5 ">
+    <h1 class="text-xl font-semibold">Title</h1>
+    <h1><i class="fa-solid fa-check-double mr-1 text-green-500"></i> Mark as read ( <span>0</span> )</h1>
+   </div>
+   <div class="flex justify-between rounded-xl p-2 bg-white space-y-5 ">
+    <h1>10 Kids Unaware of Their <br> Halloween Costume</h1>
+    <h1>51010</h1>
+   </div>
+</div>
     `;
+  showMarkNews.appendChild(div);
+  document.getElementById("count").innerText++;
 };
-
 const latestPost = async () => {
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
@@ -119,3 +130,4 @@ const latestPost = async () => {
 
 getPosts();
 latestPost();
+// showCard2Data()

@@ -36,15 +36,15 @@
             <div class="tooltip" data-tip="Home">
               <a class="btn rounded-full hover: "><i class="fa-solid fa-house"></i></a>
             </div>
-            <div class="tooltip" data-tip="Home">
+            <div class="tooltip" data-tip="Write something">
               <a class="btn rounded-full "><i class="fa-solid fa-pencil"></i></a>
             </div>
-            <div class="tooltip" data-tip="Home">
+            <div class="tooltip" data-tip="Add More Friends">
               <a class="btn rounded-full "
               ><i class="fa-solid fa-user-plus "></i
             ></a>
             </div>
-            <div class="tooltip" data-tip="Home">
+            <div class="tooltip" data-tip="Pages">
               <a class="btn rounded-full "
               ><i class="fa-brands fa-font-awesome"></i
             ></a>
@@ -57,6 +57,8 @@
     </header>
     <!-- main content container -->
     <main class="container mx-auto">
+      <!-- loader section  -->
+      
       <!-- banner-section -->
       <section class="mt-8 relative">
         <div
@@ -68,8 +70,8 @@
                          <span class="bg-gradient-to-r from-[#797DFC] to-[#797DFC] bg-clip-text text-transparent">ReTro</span> Forum</h1>
                     <p class="text-white text-2xl">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
                     <div class="relative">
-                        <input type="text" placeholder="Search here anything" class="input rounded-3xl input-bordered input-md lg:w-60 lg:w-full lg:max-w-xs" /> 
-                    <a class="btn lg:text-xl absolute rounded-3xl   lg:left-64  lg:px-5 text-white bg-[#797DFC]">Search</a>
+                        <input id="input-area" type="text" placeholder="Search here anything" class="input rounded-3xl input-bordered input-md lg:w-60 lg:w-full lg:max-w-xs" /> 
+                    <a onclick="handleSearch()"  class="btn lg:text-xl absolute rounded-3xl   lg:left-64  lg:px-5 text-white bg-[#797DFC]">Search</a>
                     </div>
                 </div>
                 
@@ -89,37 +91,36 @@
             <h1 class="text-3xl lg:text-4xl font-bold text-center">Let’s Discuss</h1>
             <h1 class="text-center w-4/5 lg:w-2/4 mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</h1>
         </div>
-        <div class="flex flex-col lg:flex-row mt-5 gap-5">
-           <div>
-            <div id="show card" class="flex-1 space-y-5">
-              <!-- <div class="card card-side bg-base-100 shadow-xl">
-                 <div class="flex">
-                    <div>
-                        <figure><img class="p-6" src="./images/logo.png" alt=""></figure>
-                    </div>
-                    <div class="card-body">
-                      <div class="flex gap-3">
-                        <h1># Music</h1>
-                        <h1>Author : Awlad Hossain</h1>
-                      </div>
-                      <div class="space-y-2"><h1 class="text-xl font-semibold">10 Kids Unaware of Their Halloween Costume</h1>
-                        <h1>It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</h1></div> <hr class="my-4">
-                        <div class="flex justify-between">
-                          <div class="flex gap-3">
-                            <h2>comment</h2>
-                            <h2>wacth</h2>
-                            <h2>time</h2>
-                          </div>
-                          <div> <button class="bg-green-800 rounded-full"><img src="" alt=""></button></div>
-                        </div>
-                    </div>
-                 </div>
-                </div> -->
-            </div>
-           </div>
-            <div id="show-mark-news">
-                
+
+          <!-- loader -->
+          <div id="spinner" class="mt-11 text-center hidden">
+            <span class="loading loading-ball loading-xs"></span>
+            <span class="loading loading-ball loading-sm"></span>
+            <span class="loading loading-ball loading-md"></span>
+            <span class="loading loading-ball loading-lg"></span>
         </div>
+
+        <div id="inject-post" class="flex  flex-col lg:flex-row mt-5 gap-5">
+          <div>
+            <div id="show card" class="flex-1 space-y-5">
+
+            </div>
+          </div>
+          <!-- onclick data show -->
+              <div id="show-mark-news">
+                <!-- <div class="card lg:w-96 bg-[#12132D0D] p-6">
+                  <div class="flex justify-between mb-5 ">
+                    <h1 class="text-xl font-semibold">Title</h1>
+                    <h1><i class="fa-solid fa-check-double mr-1 text-green-500"></i> Mark as read ( <span>0</span> )</h1>
+                   </div>
+                   <div class="flex justify-between rounded-xl p-2 bg-white space-y-5 ">
+                    <h1>10 Kids Unaware of Their <br> Halloween Costume</h1>
+                    <h1>51010</h1>
+                   </div>
+                </div> -->
+               </div>
+        </div>
+           
       </section>
       <!-- Forum -section  -->
       <section class="bg-[#12132D] rounded-2xl mt-16">
