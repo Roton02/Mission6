@@ -119,8 +119,8 @@ const markAsRead = async (first, second) => {
   const showMarkNews = document.getElementById("show-mark-news");
   const div = document.createElement("div");
   div.innerHTML = `
-   <div class="flex  justify-between rounded-xl py-2 bg-white  ">
-    <h1>${first}</h1>
+   <div class="flex  justify-around gap-2 rounded-xl p-2 bg-white  ">
+    <h1 class="flex-1">${first}</h1>
     <h1> <i class="fa-solid fa-eye"></i> ${second}</h1>
    </div>`;
   showMarkNews.appendChild(div);
