@@ -125,8 +125,9 @@ const markAsRead = async (first, second) => {
    </div>`;
   showMarkNews.appendChild(div);
 };
-
+document.getElementById("loading").classList.remove("hidden");
 const latestPost = async () => {
+
   const response = await fetch(
     "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
   );
@@ -163,8 +164,11 @@ const latestPost = async () => {
       </div>
         `;
     latestPostShow.appendChild(div);
+    document.getElementById("loading").classList.add("hidden");
   });
 };
 // call function
 getPosts(`posts`);
-latestPost();
+setTimeout(() => {
+  latestPost();
+}, 2000);
