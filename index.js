@@ -165,6 +165,6 @@ const latestPost = async () => {
     latestPostShow.appendChild(div);
   });
 };
-
+// call function
 getPosts(`posts`);
 latestPost();
